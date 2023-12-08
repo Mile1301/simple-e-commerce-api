@@ -17,7 +17,6 @@ export class ImagesService {
 
   async createImage(imageData: CreateImageDto, file: Express.Multer.File) {
     const { url, priority } = imageData;
-    // Using nullish operator to be sure that if priority value is not passed, the default value is assigned
     const imagePriority = priority ?? 1000;
     const image = await this.uploadImageToCloudinary(file);
 

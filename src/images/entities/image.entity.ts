@@ -18,9 +18,6 @@ export class Image {
   @Column({ default: 1000 })
   priority: number;
 
-  // An image can be associated with one product, but one product can have many images
-  // JoinColumn is used to create a column in the images table that references by id the product with its associated images
-
   @ManyToOne(() => ProductEx, (product) => product.images, {
     onDelete: 'SET NULL',
   })

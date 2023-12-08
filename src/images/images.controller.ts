@@ -9,7 +9,6 @@ import {
   UploadedFile,
   UseInterceptors,
 } from '@nestjs/common';
-import { CreateImageDto } from './dtos/create-image.dto';
 import { ImagesService } from './images.service';
 import { FileInterceptor } from '@nestjs/platform-express';
 

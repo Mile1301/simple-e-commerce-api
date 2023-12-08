@@ -10,7 +10,6 @@ import { Image } from 'src/images/entities/image.entity';
 @Injectable()
 export class ProductsService {
   @InjectRepository(ProductEx) private productsRepo: Repository<ProductEx>;
-  //   1. REST Support - Bonus
 
   async createProduct(productData: CreateProductExDto) {
     const { imageIds, ...otherData } = productData;
@@ -44,7 +43,6 @@ export class ProductsService {
     await this.productsRepo.remove(productToDelete);
   }
 
-  //   1.1 Find All Product (including filters) - Bonus
   findAllProducts(filters: ProductFilters) {
     const filterConfig: FindManyOptions<ProductEx> = {};
 
@@ -69,7 +67,6 @@ export class ProductsService {
     return this.productsRepo.find(filterConfig);
   }
 
-  //   1.2 Find Product By Id - Bonus
   async findProductById(id: number) {
     const product = await this.productsRepo.findOne({
       where: { id },

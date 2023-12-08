@@ -19,8 +19,7 @@ import { CloudinaryModule } from './cloudinary/cloudinary.module';
           username: configService.get('DB_USERNAME'),
           password: configService.get('DB_PASSWORD'),
           database: configService.get('DB_NAME'),
-          //TODO Dont forget to change when deploying
-          synchronize: true,
+          synchronize: false,
           autoLoadEntities: true,
         };
       },
